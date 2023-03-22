@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--light-blue-500);
+  padding: 8px 16px;
+  color: white;
+  position: fixed;
+  width: calc(100svw - 16px);
+  z-index: 100;
+}
+
+.navbarTitle {
+  font-weight: 600;
+}
+
+.navContentItem {
+  padding: 8px 16px;
+  color: white;
+  transition-property: background-color;
+  transition-duration: 400ms;
+  transition-timing-function: ease;
+}
+
+.navContentItem:hover {
+  background-color: #64B5F6;
+}
