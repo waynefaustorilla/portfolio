@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import Link from "../Link";
-import navigation from "./../../css-module/navigationbar.module.css";
+import navigation from "./../../css-module/navigationbar.module.scss";
 
 const NavigationBar: FunctionComponent = () => {
   return (

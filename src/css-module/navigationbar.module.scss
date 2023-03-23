@@ -1,8 +1,10 @@
+@import "./colors.module.scss";
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--light-blue-500);
+  background-color: $light-blue-500;
   padding: 8px 16px;
   color: white;
   position: fixed;
@@ -23,5 +25,5 @@
 }
 
 .navContentItem:hover {
-  background-color: #64B5F6;
+  background-color: $light-blue-500;
 }

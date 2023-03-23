@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import intro from "./../../css-module/intro.module.css";
+import intro from "./../../css-module/intro.module.scss";
 import { motion } from "framer-motion";
 
 const Intro: FunctionComponent = (): JSX.Element => {

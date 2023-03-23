@@ -1,7 +1,9 @@
 import React from "react";
 import { AnimatePresence } from "framer-motion";
-import Home from "./pages/Home";
-import "./root.module.css";
+import NavigationBar from "./components/NavigationBar";
+import Intro from "./components/Intro";
+import About from "./pages/About";
+import "./root.module.scss";
 
 const Application: React.FunctionComponent = () => {
   React.useEffect(() => {
@@ -10,7 +12,11 @@ const Application: React.FunctionComponent = () => {
 
   return (
     <AnimatePresence mode={"wait"}>
-      <Home />
+      <NavigationBar />
+
+      <Intro />
+
+      <About />
     </AnimatePresence>
   );
 };

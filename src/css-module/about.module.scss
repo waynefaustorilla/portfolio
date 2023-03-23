@@ -1,0 +1,42 @@
+@import "./colors.module.scss";
+
+.about {
+  height: 100svh;
+  background-color: $black;
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutCard {
+  border-radius: 8px;
+  background-color: $white;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.graduationPhotoContainer {
+  padding: 16px;
+  background-color: $light-blue-500;
+  width: 300px;
+  border-radius: inherit;
+}
+
+.graduationPhotoImage {
+  width: 100%;
+}
+
+.aboutCardText {
+  width: 30svw;
+  color: $black;
+  background-color: $white;
+  padding: 16px;
+
+}
+
+.aboutCardHeader {
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
