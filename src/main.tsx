@@ -1,7 +1,7 @@
 import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import Application from "./App";
 
 const root = document.querySelector("#root");
 
-ReactDOM.render(<StrictMode><App /></StrictMode>, root);
+ReactDOM.render(<StrictMode><Application /></StrictMode>, root);

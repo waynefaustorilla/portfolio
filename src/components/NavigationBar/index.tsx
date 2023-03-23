@@ -1,17 +1,18 @@
 import React, { FunctionComponent } from "react";
-import style from "./../../css-module/navigationbar.module.css";
+import Link from "../Link";
+import navigation from "./../../css-module/navigationbar.module.css";
 
 const NavigationBar: FunctionComponent = () => {
   return (
-    <nav className={style.navbar}>
-      <h2 className={style.navbarTitle}>Orlie Wayne A. Faustorilla</h2>
+    <nav className={navigation.navbar}>
+      <h2 className={navigation.navbarTitle}>Orlie Wayne A. Faustorilla</h2>
 
-      <div className={style.navContent}>
-        <a className={style.navContentItem} href="#intro">Intro</a>
-        <a className={style.navContentItem} href="#project">Projects</a>
-        <a className={style.navContentItem} href="#skills">Skills</a>
-        <a className={style.navContentItem} href="#about">About Me</a>
-        <a className={style.navContentItem} href="#contact">Contact Me</a>
+      <div className={navigation.navContent}>
+        <Link className={navigation.navContentItem} href="#intro">Intro</Link>
+        <Link className={navigation.navContentItem} href="#about">About Me</Link>
+        <Link className={navigation.navContentItem} href="#project">Projects</Link>
+        <Link className={navigation.navContentItem} href="#skills">Skills</Link>
+        <Link className={navigation.navContentItem} href="#contact">Contact Me</Link>
       </div>
     </nav>
   );

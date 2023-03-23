@@ -1,6 +1,7 @@
 import React, { Fragment, FunctionComponent } from "react";
 import Intro from "../components/Intro";
 import NavigationBar from "../components/NavigationBar";
+import About from "./About";
 
 const Home: FunctionComponent = (): JSX.Element => {
   return (
@@ -8,6 +9,8 @@ const Home: FunctionComponent = (): JSX.Element => {
       <NavigationBar />
 
       <Intro />
+
+      <About />
     </Fragment>
   );
 };

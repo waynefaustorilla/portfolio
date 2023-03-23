@@ -1,0 +1,27 @@
+@import "./colors.module.css";
+
+.about {
+  height: 100svh;
+  background-color: var(--black);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutCard {
+  border-radius: 8px;
+  width: 50svw;
+  background-color: var(--white);
+}
+
+.graduationPhotoContainer {
+  padding: 16px;
+  background-color: var(--light-blue-500);
+  width: 300px;
+  border-radius: inherit;
+}
+
+.graduationPhotoImage {
+  width: 100%;
+}
