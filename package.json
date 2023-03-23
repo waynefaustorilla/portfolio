@@ -1,11 +1,14 @@
 {
   "name": "portfolio",
+  "homepage": "https://kuyawayne.github.io/portfolio/",
   "private": false,
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "framer-motion": "^10.8.4",
@@ -21,6 +24,7 @@
     "@vitejs/plugin-react": "^1.0.7",
     "eslint": "^8.36.0",
     "eslint-plugin-react": "^7.32.2",
+    "gh-pages": "^5.0.0",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"
   }
