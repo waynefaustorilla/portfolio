@@ -1,17 +1,20 @@
 import { IconName } from "@fortawesome/fontawesome-svg-core";
-import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 type SocialLinkProps = {
   icon: IconName;
+  link: string;
 };
 
 const SocialLink: React.FunctionComponent<SocialLinkProps> = (props): React.JSX.Element => {
   return (
-    <>
-      <FontAwesomeIcon size={"xl"} icon={solid(props.icon)} />
-    </>
+    <Link href={props.link} target={"_blank"}>
+      <button type="button" className={"border border-black p-4 active:scale-90 rounded-full hover:scale-125 ease-in-out transition-all hover:shadow-lg"}>
+        <FontAwesomeIcon size={"xl"} icon={["fab", props.icon]} />
+      </button>
+    </Link>
   );
 };
 

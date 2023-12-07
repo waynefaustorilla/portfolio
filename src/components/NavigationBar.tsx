@@ -2,7 +2,7 @@ import React from "react";
 
 const NavigationBar: React.FunctionComponent = (): React.JSX.Element => {
   return (
-    <nav className={"flex items-center justify-between p-4 fixed top-0 w-full shadow bg-white"}>
+    <nav className={"flex items-center justify-between p-4 fixed top-0 w-full shadow bg-gray-300"}>
       <div className={"start"}>
         <h5 className={"text-lg font-bold"}>Orlie Wayne Faustorilla</h5>
       </div>
