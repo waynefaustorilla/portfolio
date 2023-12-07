@@ -1,6 +1,7 @@
 import { IconName } from "@fortawesome/fontawesome-svg-core";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import React from "react";
 
 type SocialLinkProps = {
