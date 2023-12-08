@@ -1,6 +1,6 @@
+import MaskedPhoto from "@/components/MaskedPhoto";
 import SocialLink from "@/components/SocialLink";
 import React from "react";
-import MaskedPhoto from "@/components/MaskedPhoto";
 
 const Home: React.FunctionComponent = (): React.JSX.Element => {
   return (

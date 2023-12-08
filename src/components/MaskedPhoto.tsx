@@ -1,22 +1,13 @@
-import React from "react";
 import photo from "@/assets/img/wayne.jpg";
-
-const style: React.CSSProperties = {
-  width: "80%",
-  height: "80%",
-  marginTop: "5em",
-  backgroundImage: `url(${photo.src})`,
-  backgroundPosition: "135% 5%",
-  backgroundAttachment: "fixed",
-  backgroundRepeat: "no-repeat",
-  borderRadius: "50%",
-  boxShadow: "5px 5px 10px #2d2d2d55"
-};
+import Image from "next/image";
+import React from "react";
 
 const MaskedPhoto: React.FunctionComponent = (): React.JSX.Element => {
   return (
     <React.Fragment>
-      <span style={style}></span>
+      <div className={"image-container rounded-all"}>
+        <Image src={photo} alt={photo.src} fill={false} placeholder={"blur"} height={800} width={800} />
+      </div>
     </React.Fragment>
   );
 };
