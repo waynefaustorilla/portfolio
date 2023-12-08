@@ -5,8 +5,8 @@ import React from "react";
 const MaskedPhoto: React.FunctionComponent = (): React.JSX.Element => {
   return (
     <React.Fragment>
-      <div className={"image-container rounded-all"}>
-        <Image src={photo} alt={photo.src} fill={false} placeholder={"blur"} height={800} width={800} />
+      <div className={"rounded-full shadow"}>
+        <Image src={photo} alt={photo.src} fill={false} height={800} width={800} style={{ borderRadius: "10000px" }} />
       </div>
     </React.Fragment>
   );
