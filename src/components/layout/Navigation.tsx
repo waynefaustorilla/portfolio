@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { scrollToSection } from "../../utils";
 import { navigationItems } from "../../data/portfolio";
+import { ThemeSwitcher } from "../ui/ThemeSwitcher";
+import { useTheme } from "../../hooks/useTheme";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,7 +54,7 @@ export const Navigation = () => {
         <div className="flex justify-between items-center h-14 sm:h-16">
           {/* Logo */}
           <motion.div
-            className="shrink-0 text-lg sm:text-xl md:text-2xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent cursor-pointer"
+            className="shrink-0 text-lg sm:text-xl md:text-2xl font-bold bg-linear-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent cursor-pointer"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
             onClick={() => handleNavClick('hero')}
@@ -69,13 +71,22 @@ export const Navigation = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index, duration: 0.5 }}
                 onClick={() => handleNavClick(item.id)}
-                className="text-sm lg:text-base text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors capitalize font-medium whitespace-nowrap px-2 py-1"
+                className="text-sm lg:text-base text-slate-600 dark:text-slate-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors capitalize font-medium whitespace-nowrap px-2 py-1"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {item.label}
               </motion.button>
             ))}
+            
+            {/* Theme Switcher */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 * navigationItems.length, duration: 0.5 }}
+            >
+              <ThemeSwitcher />
+            </motion.div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -91,9 +102,9 @@ export const Navigation = () => {
             transition={{ duration: 0.3 }}
           >
             {isMenuOpen ? (
-              <X className="w-6 h-6 text-slate-600 dark:text-slate-300" />
+              <FontAwesomeIcon icon="times" className="w-6 h-6 text-slate-600 dark:text-slate-300" />
             ) : (
-              <Menu className="w-6 h-6 text-slate-600 dark:text-slate-300" />
+              <FontAwesomeIcon icon="bars" className="w-6 h-6 text-slate-600 dark:text-slate-300" />
             )}
           </motion.button>
         </div>
@@ -117,7 +128,7 @@ export const Navigation = () => {
               <motion.button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className="block w-full text-left py-3 px-4 text-base text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-all capitalize font-medium"
+                className="block w-full text-left py-3 px-4 text-base text-slate-600 dark:text-slate-300 hover:text-pink-500 dark:hover:text-pink-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-all capitalize font-medium"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{
                   opacity: isMenuOpen ? 1 : 0,

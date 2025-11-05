@@ -1,15 +1,7 @@
 import { motion } from "framer-motion";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
-import {
-  Trophy,
-  Coffee,
-  Code,
-  Lightbulb,
-  Target,
-  Heart,
-  ArrowRight
-} from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   coreValues,
   statistics,
@@ -55,7 +47,7 @@ export const AboutSection = () => {
                     transition={{ duration: 0.6 }}
                     className="mr-3"
                   >
-                    <Code className="w-6 h-6" />
+                    <FontAwesomeIcon icon="code" className="w-6 h-6" />
                   </motion.div>
                   My Journey
                 </motion.h3>
@@ -100,7 +92,7 @@ export const AboutSection = () => {
                     transition={{ duration: 0.6 }}
                     className="mr-3"
                   >
-                    <Heart className="w-6 h-6" />
+                    <FontAwesomeIcon icon="heart" className="w-6 h-6" />
                   </motion.div>
                   Core Values
                 </motion.h3>
@@ -152,7 +144,7 @@ export const AboutSection = () => {
                     transition={{ duration: 0.6 }}
                     className="mr-3"
                   >
-                    <Lightbulb className="w-6 h-6" />
+                    <FontAwesomeIcon icon="lightbulb" className="w-6 h-6" />
                   </motion.div>
                   What I Do
                 </motion.h3>
@@ -163,9 +155,9 @@ export const AboutSection = () => {
                     transition={{ delay: 0.5 }}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.02 }}
-                    className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800"
+                    className="p-4 bg-pink-50 dark:bg-pink-900/20 rounded-lg border border-pink-200 dark:border-pink-800"
                   >
-                    <h4 className="font-semibold mb-2 text-blue-700 dark:text-blue-300">
+                    <h4 className="font-semibold mb-2 text-pink-600 dark:text-pink-300">
                       Frontend Development
                     </h4>
                     <p className="text-slate-600 dark:text-slate-300 text-sm">
@@ -197,9 +189,9 @@ export const AboutSection = () => {
                     transition={{ delay: 0.7 }}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.02 }}
-                    className="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800"
+                    className="p-4 bg-rose-50 dark:bg-rose-900/20 rounded-lg border border-rose-200 dark:border-rose-800"
                   >
-                    <h4 className="font-semibold mb-2 text-purple-700 dark:text-purple-300">
+                    <h4 className="font-semibold mb-2 text-rose-600 dark:text-rose-300">
                       UI/UX Design
                     </h4>
                     <p className="text-slate-600 dark:text-slate-300 text-sm">
@@ -248,7 +240,7 @@ export const AboutSection = () => {
                     transition={{ duration: 0.6 }}
                     className="mr-3"
                   >
-                    <Trophy className="w-5 h-5" />
+                    <FontAwesomeIcon icon="trophy" className="w-5 h-5" />
                   </motion.div>
                   By the Numbers
                 </motion.h3>
@@ -268,7 +260,7 @@ export const AboutSection = () => {
                         transition={{ duration: 0.6 }}
                         className="mr-3"
                       >
-                        <Trophy className="w-4 h-4 text-blue-500" />
+                        <FontAwesomeIcon icon="trophy" className="w-4 h-4 text-pink-500" />
                       </motion.div>
                       <div className="flex-1">
                         <div className="font-bold text-lg">{stat.value}</div>
@@ -299,7 +291,7 @@ export const AboutSection = () => {
                     transition={{ duration: 0.6 }}
                     className="mr-3"
                   >
-                    <Coffee className="w-5 h-5" />
+                    <FontAwesomeIcon icon="coffee" className="w-5 h-5" />
                   </motion.div>
                   Quick Facts
                 </motion.h3>
@@ -341,7 +333,7 @@ export const AboutSection = () => {
                     transition={{ duration: 0.6 }}
                     className="mr-3"
                   >
-                    <Target className="w-5 h-5" />
+                    <FontAwesomeIcon icon="bullseye" className="w-5 h-5" />
                   </motion.div>
                   Current Status
                 </motion.h3>
@@ -366,9 +358,9 @@ export const AboutSection = () => {
                           indicator.color === 'green'
                             ? 'bg-green-500'
                             : indicator.color === 'blue'
-                            ? 'bg-blue-500'
+                            ? 'bg-pink-500'
                             : indicator.color === 'purple'
-                            ? 'bg-purple-500'
+                            ? 'bg-rose-500'
                             : 'bg-gray-500'
                         }`}
                         animate={{
@@ -397,7 +389,7 @@ export const AboutSection = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <Card className="p-8 bg-linear-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-none">
+          <Card className="p-8 bg-linear-to-r from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20 border-none">
             <motion.h3
               className="text-2xl font-bold mb-4"
               whileHover={{ scale: 1.05 }}
@@ -429,7 +421,7 @@ export const AboutSection = () => {
                   transition={{ duration: 0.3 }}
                 >
                   Get In Touch
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  <FontAwesomeIcon icon="arrow-right" className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </motion.div>
               </Button>
             </motion.div>

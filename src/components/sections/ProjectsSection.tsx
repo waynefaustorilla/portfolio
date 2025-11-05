@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Card } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { projects } from "../../data/portfolio";
 import type { Project } from "../../types";
 
@@ -36,12 +36,12 @@ export const ProjectsSection = () => {
             >
               <Card className="p-4 sm:p-6 h-full flex flex-col hover:shadow-xl transition-all duration-300">
                 <motion.div
-                  className="aspect-video bg-linear-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg mb-3 sm:mb-4 flex items-center justify-center"
+                  className="aspect-video bg-linear-to-br from-pink-100 to-rose-100 dark:from-pink-900/20 dark:to-rose-900/20 rounded-lg mb-3 sm:mb-4 flex items-center justify-center"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
                   <motion.div
-                    className="text-4xl sm:text-6xl text-blue-500"
+                    className="text-4xl sm:text-6xl text-pink-500"
                     animate={{
                       rotate: [0, 5, -5, 0],
                       scale: [1, 1.1, 1]
@@ -107,13 +107,13 @@ export const ProjectsSection = () => {
                 >
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Button size="sm" variant="outline" className="flex-1">
-                      <Github className="w-4 h-4 mr-2" />
+                      <FontAwesomeIcon icon={["fab", "github"]} className="w-4 h-4 mr-2" />
                       Code
                     </Button>
                   </motion.div>
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Button size="sm" className="flex-1">
-                      <ExternalLink className="w-4 h-4 mr-2" />
+                      <FontAwesomeIcon icon="external-link-alt" className="w-4 h-4 mr-2" />
                       Live Demo
                     </Button>
                   </motion.div>

@@ -3,7 +3,7 @@ import { Card } from "../ui/card";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { personalInfo } from "../../data/portfolio";
 
 export const ContactSection = () => {
@@ -69,7 +69,7 @@ export const ContactSection = () => {
                   }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Mail className="w-6 h-6 text-blue-600" />
+                  <FontAwesomeIcon icon="envelope" className="w-6 h-6 text-pink-500" />
                 </motion.div>
                 <div>
                   <p className="font-semibold text-left">Email</p>
@@ -93,7 +93,7 @@ export const ContactSection = () => {
                   }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Phone className="w-6 h-6 text-green-600" />
+                  <FontAwesomeIcon icon="phone" className="w-6 h-6 text-green-600" />
                 </motion.div>
                 <div>
                   <p className="font-semibold text-left">Phone</p>
@@ -117,7 +117,7 @@ export const ContactSection = () => {
                   }}
                   transition={{ duration: 0.5 }}
                 >
-                  <MapPin className="w-6 h-6 text-purple-600" />
+                  <FontAwesomeIcon icon="map-pin" className="w-6 h-6 text-rose-500" />
                 </motion.div>
                 <div>
                   <p className="font-semibold text-left">Location</p>
@@ -226,7 +226,7 @@ export const ContactSection = () => {
                         transition={{ duration: 0.3 }}
                       >
                         Send Message
-                        <Send className="w-4 h-4 ml-2 group-hover:rotate-45 transition-transform duration-300" />
+                        <FontAwesomeIcon icon="paper-plane" className="w-4 h-4 ml-2 group-hover:rotate-45 transition-transform duration-300" />
                       </motion.div>
                     </Button>
                   </motion.div>

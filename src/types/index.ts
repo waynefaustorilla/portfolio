@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { LucideIcon } from "lucide-react";
+import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export interface Skill {
   name: string;
@@ -30,7 +30,7 @@ export interface SocialLink {
 }
 
 export interface Specialization {
-  icon: LucideIcon;
+  icon: IconProp;
   title: string;
   desc: string;
   color: string;

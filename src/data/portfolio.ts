@@ -166,13 +166,13 @@ export const hobbies: Hobby[] = [
     name: "Photography",
     description: "Capturing moments and exploring creative composition, developing an eye for detail and visual storytelling.",
     icon: "📸",
-    color: "from-blue-500 to-blue-600"
+    color: "from-pink-400 to-rose-500"
   },
   {
     name: "Guitar",
     description: "Playing acoustic and electric guitar, exploring different genres and techniques to express creativity through music.",
     icon: "🎸",
-    color: "from-purple-500 to-purple-600"
+    color: "from-pink-500 to-rose-600"
   },
   {
     name: "Songwriting",

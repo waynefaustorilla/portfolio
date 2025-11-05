@@ -2,22 +2,22 @@ import { motion } from "framer-motion";
 import { Card } from "../ui/card";
 import { AnimatedProgress } from "../shared/AnimatedProgress";
 import { skillsData } from "../../data/portfolio";
-import { Code, Database, Globe, Smartphone, Server, Palette } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { SkillCategory } from "../../types";
 
 const iconMap = {
-  Code: Code,
-  Database: Database,
-  Globe: Globe,
-  Smartphone: Smartphone,
-  Server: Server,
-  Palette: Palette,
-};
+  Code: "code",
+  Database: "database",
+  Globe: "globe",
+  Smartphone: "mobile",
+  Server: "server",
+  Palette: "palette",
+} as const;
 
 const categoryColors = {
-  "Frontend": "from-blue-500 to-blue-600",
+  "Frontend": "from-pink-400 to-rose-500",
   "Backend": "from-green-500 to-green-600",
-  "Database": "from-purple-500 to-purple-600",
+  "Database": "from-pink-500 to-rose-600",
   "Cloud & DevOps": "from-orange-500 to-orange-600"
 };
 
@@ -49,17 +49,17 @@ export const SkillsSection = () => {
                     transition={{ duration: 0.6 }}
                     className="mr-2 sm:mr-3"
                   >
-                    {category.category === "Frontend" && <Code className="w-5 h-5 sm:w-6 sm:h-6" />}
-                    {category.category === "Backend" && <Server className="w-5 h-5 sm:w-6 sm:h-6" />}
-                    {category.category === "Database" && <Database className="w-5 h-5 sm:w-6 sm:h-6" />}
-                    {category.category === "Cloud & DevOps" && <Globe className="w-5 h-5 sm:w-6 sm:h-6" />}
+                    {category.category === "Frontend" && <FontAwesomeIcon icon="code" className="w-5 h-5 sm:w-6 sm:h-6" />}
+                    {category.category === "Backend" && <FontAwesomeIcon icon="server" className="w-5 h-5 sm:w-6 sm:h-6" />}
+                    {category.category === "Database" && <FontAwesomeIcon icon="database" className="w-5 h-5 sm:w-6 sm:h-6" />}
+                    {category.category === "Cloud & DevOps" && <FontAwesomeIcon icon="globe" className="w-5 h-5 sm:w-6 sm:h-6" />}
                   </motion.div>
                   {category.category}
                 </motion.h3>
 
                 <div className="space-y-2 sm:space-y-3">
                   {category.skills.map((skill, skillIndex) => {
-                    const IconComponent = iconMap[skill.iconName as keyof typeof iconMap];
+                    const iconName = iconMap[skill.iconName as keyof typeof iconMap];
 
                     return (
                       <motion.div
@@ -83,7 +83,7 @@ export const SkillsSection = () => {
                             whileHover={{ rotate: 360 }}
                             transition={{ duration: 0.6 }}
                           >
-                            <IconComponent className="w-3 h-3 sm:w-4 sm:h-4 text-slate-600 dark:text-slate-300" />
+                            <FontAwesomeIcon icon={iconName} className="w-3 h-3 sm:w-4 sm:h-4 text-slate-600 dark:text-slate-300" />
                           </motion.div>
                           <span className="font-medium flex-1 text-xs sm:text-sm">{skill.name}</span>
                           <motion.span
