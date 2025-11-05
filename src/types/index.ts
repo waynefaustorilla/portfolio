@@ -41,6 +41,13 @@ export interface CoreValue {
   icon: string;
 }
 
+export interface Hobby {
+  name: string;
+  description: string;
+  icon: string;
+  color: string;
+}
+
 export interface Statistic {
   value: string;
   label: string;

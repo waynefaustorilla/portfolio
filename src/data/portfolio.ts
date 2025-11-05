@@ -3,7 +3,8 @@ import type {
   CoreValue,
   Statistic,
   QuickFact,
-  StatusIndicator
+  StatusIndicator,
+  Hobby
 } from "../types";
 
 export const personalInfo = {
@@ -89,6 +90,7 @@ export const navigationItems = [
   { id: "hero", label: "Home" },
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
+  { id: "hobbies", label: "Hobbies" },
   { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" }
 ];
@@ -150,5 +152,32 @@ export const skillsData = [
       { name: "Azure Pipelines", level: 75, iconName: "Globe" },
       { name: "PowerShell", level: 80, iconName: "Server" }
     ]
+  }
+];
+
+export const hobbies: Hobby[] = [
+  {
+    name: "Gym & Bodybuilding",
+    description: "Committed to strength training and personal fitness, building discipline and mental resilience through consistent workout routines.",
+    icon: "💪",
+    color: "from-red-500 to-red-600"
+  },
+  {
+    name: "Photography",
+    description: "Capturing moments and exploring creative composition, developing an eye for detail and visual storytelling.",
+    icon: "📸",
+    color: "from-blue-500 to-blue-600"
+  },
+  {
+    name: "Guitar",
+    description: "Playing acoustic and electric guitar, exploring different genres and techniques to express creativity through music.",
+    icon: "🎸",
+    color: "from-purple-500 to-purple-600"
+  },
+  {
+    name: "Songwriting",
+    description: "Creating original compositions and lyrics, blending technical skill with emotional expression and storytelling.",
+    icon: "🎵",
+    color: "from-green-500 to-green-600"
   }
 ];
