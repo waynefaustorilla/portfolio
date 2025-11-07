@@ -133,3 +133,68 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Dynamic theme gradients using CSS custom properties */
+.theme-gradient-primary {
+  background: linear-gradient(to right, var(--theme-primary-from), var(--theme-primary-to));
+}
+
+.theme-gradient-secondary {
+  background: linear-gradient(to right, var(--theme-secondary-from), var(--theme-secondary-to));
+}
+
+.theme-gradient-subtle {
+  background: linear-gradient(to right, var(--theme-subtle-from), var(--theme-subtle-to));
+}
+
+/* Gradient text classes for proper text clipping */
+.gradient-text-primary {
+  background: linear-gradient(to right, var(--theme-primary-from), var(--theme-primary-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.gradient-text-secondary {
+  background: linear-gradient(to right, var(--theme-secondary-from), var(--theme-secondary-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Theme-aware text colors */
+.text-theme-primary {
+  color: var(--theme-primary-color);
+}
+
+.text-theme-secondary {
+  color: var(--theme-secondary-color);
+}
+
+/* Theme-aware background colors */
+.bg-theme-subtle {
+  background-color: var(--theme-subtle-from);
+}
+
+.border-theme-primary {
+  border-color: var(--theme-primary-color);
+}
+
+/* Dynamic theme gradients using CSS custom properties */
+.theme-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.theme-gradient-secondary {
+  background: var(--gradient-secondary);
+}
+
+.theme-gradient-subtle {
+  background: var(--gradient-subtle);
+}
+
+.theme-gradient-background {
+  background: var(--gradient-background);
+}

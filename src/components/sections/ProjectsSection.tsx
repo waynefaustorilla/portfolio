@@ -36,7 +36,7 @@ export const ProjectsSection = () => {
             >
               <Card className="p-4 sm:p-6 h-full flex flex-col hover:shadow-xl transition-all duration-300">
                 <motion.div
-                  className="aspect-video bg-linear-to-br from-pink-100 to-rose-100 dark:from-pink-900/20 dark:to-rose-900/20 rounded-lg mb-3 sm:mb-4 flex items-center justify-center"
+                  className="aspect-video theme-gradient-subtle rounded-lg mb-3 sm:mb-4 flex items-center justify-center"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >

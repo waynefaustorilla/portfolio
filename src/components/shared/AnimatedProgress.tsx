@@ -12,11 +12,11 @@ export const AnimatedProgress = ({ value, delay = 0 }: AnimatedProgressProps) =>
 
   return (
     <div ref={ref} className="relative">
-      <motion.div
+            <motion.div
         initial={{ width: 0 }}
         animate={isInView ? { width: `${value}%` } : { width: 0 }}
         transition={{ duration: 1.5, delay, ease: "easeOut" }}
-        className="h-3 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full"
+        className="h-3 theme-gradient-primary rounded-full"
       />
       <div className="absolute inset-0 bg-slate-200 dark:bg-slate-700 rounded-full -z-10" />
     </div>

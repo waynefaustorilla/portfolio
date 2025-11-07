@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { scrollToSection } from "../../utils";
 import { navigationItems } from "../../data/portfolio";
-import { ThemeSwitcher } from "../ui/ThemeSwitcher";
-import { useTheme } from "../../hooks/useTheme";
+import { ThemeSwitcher } from "../features/ThemeSwitcher";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,7 +53,7 @@ export const Navigation = () => {
         <div className="flex justify-between items-center h-14 sm:h-16">
           {/* Logo */}
           <motion.div
-            className="shrink-0 text-lg sm:text-xl md:text-2xl font-bold bg-linear-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent cursor-pointer"
+            className="shrink-0 text-lg sm:text-xl md:text-2xl font-bold gradient-text-primary cursor-pointer"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
             onClick={() => handleNavClick('hero')}
@@ -78,7 +77,7 @@ export const Navigation = () => {
                 {item.label}
               </motion.button>
             ))}
-            
+
             {/* Theme Switcher */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}

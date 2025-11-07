@@ -6,7 +6,7 @@ import { useTheme } from "../../../hooks/useTheme";
 
 export const HeroButtons = () => {
   const { getGradient } = useTheme();
-  
+
   const buttonsVariants = {
     hidden: {
       opacity: 0,

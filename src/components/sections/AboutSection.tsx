@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   coreValues,
   statistics,
@@ -155,9 +156,9 @@ export const AboutSection = () => {
                     transition={{ delay: 0.5 }}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.02 }}
-                    className="p-4 bg-pink-50 dark:bg-pink-900/20 rounded-lg border border-pink-200 dark:border-pink-800"
+                    className="p-4 bg-theme-subtle rounded-lg border border-theme-primary"
                   >
-                    <h4 className="font-semibold mb-2 text-pink-600 dark:text-pink-300">
+                    <h4 className="font-semibold mb-2 text-theme-primary">
                       Frontend Development
                     </h4>
                     <p className="text-slate-600 dark:text-slate-300 text-sm">
@@ -189,9 +190,9 @@ export const AboutSection = () => {
                     transition={{ delay: 0.7 }}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.02 }}
-                    className="p-4 bg-rose-50 dark:bg-rose-900/20 rounded-lg border border-rose-200 dark:border-rose-800"
+                    className="p-4 bg-theme-subtle rounded-lg border border-theme-primary"
                   >
-                    <h4 className="font-semibold mb-2 text-rose-600 dark:text-rose-300">
+                    <h4 className="font-semibold mb-2 text-theme-secondary">
                       UI/UX Design
                     </h4>
                     <p className="text-slate-600 dark:text-slate-300 text-sm">
@@ -260,7 +261,7 @@ export const AboutSection = () => {
                         transition={{ duration: 0.6 }}
                         className="mr-3"
                       >
-                        <FontAwesomeIcon icon="trophy" className="w-4 h-4 text-pink-500" />
+                        <FontAwesomeIcon icon="trophy" className="w-4 h-4 text-theme-primary" />
                       </motion.div>
                       <div className="flex-1">
                         <div className="font-bold text-lg">{stat.value}</div>
@@ -389,7 +390,7 @@ export const AboutSection = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <Card className="p-8 bg-linear-to-r from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20 border-none">
+          <Card className="p-8 theme-gradient-subtle border-none">
             <motion.h3
               className="text-2xl font-bold mb-4"
               whileHover={{ scale: 1.05 }}

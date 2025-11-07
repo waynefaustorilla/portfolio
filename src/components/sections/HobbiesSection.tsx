@@ -70,7 +70,7 @@ export const HobbiesSection = () => {
           transition={{ delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-purple-600 rounded-full"></div>
+          <div className="w-24 h-1 theme-gradient-primary rounded-full"></div>
         </motion.div>
       </div>
     </section>

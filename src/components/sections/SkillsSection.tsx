@@ -14,13 +14,6 @@ const iconMap = {
   Palette: "palette",
 } as const;
 
-const categoryColors = {
-  "Frontend": "from-pink-400 to-rose-500",
-  "Backend": "from-green-500 to-green-600",
-  "Database": "from-pink-500 to-rose-600",
-  "Cloud & DevOps": "from-orange-500 to-orange-600"
-};
-
 export const SkillsSection = () => {
   return (
     <section id="skills" className="py-12 sm:py-16 lg:py-20 px-0 bg-slate-50 dark:bg-slate-800/50">
@@ -41,7 +34,7 @@ export const SkillsSection = () => {
             >
               <Card className="p-4 sm:p-6 hover:shadow-lg transition-shadow h-full">
                 <motion.h3
-                  className={`text-lg sm:text-xl font-bold mb-4 sm:mb-6 bg-linear-to-r ${categoryColors[category.category as keyof typeof categoryColors]} bg-clip-text text-transparent flex items-center`}
+                  className="text-lg sm:text-xl font-bold mb-4 sm:mb-6 gradient-text-primary flex items-center"
                   whileHover={{ scale: 1.02 }}
                 >
                   <motion.div
