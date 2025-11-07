@@ -3,6 +3,7 @@ import { Card } from "../ui/card";
 import { AnimatedProgress } from "../shared/AnimatedProgress";
 import { skillsData } from "../../data/portfolio";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useScrollAnimation, useStaggerAnimation } from "../../hooks/useScrollAnimation";
 import type { SkillCategory } from "../../types";
 
 const iconMap = {
@@ -15,22 +16,32 @@ const iconMap = {
 } as const;
 
 export const SkillsSection = () => {
+  const titleAnimation = useScrollAnimation({ threshold: 0.3 });
+  const skillsAnimation = useStaggerAnimation({ threshold: 0.2, staggerDelay: 0.2 });
+
   return (
     <section id="skills" className="py-12 sm:py-16 lg:py-20 px-0 bg-slate-50 dark:bg-slate-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="text-center mb-8 sm:mb-12 lg:mb-16">
+        <motion.div
+          ref={titleAnimation.ref}
+          {...titleAnimation.getAnimationProps('slideDown')}
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
+        >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Skills & Expertise</h2>
           <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300">Technologies and tools I work with</p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
+        <motion.div
+          ref={skillsAnimation.ref}
+          variants={skillsAnimation.containerVariants}
+          initial="initial"
+          animate="animate"
+          className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto"
+        >
           {skillsData.map((category: SkillCategory, categoryIndex: number) => (
             <motion.div
               key={category.category}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
-              viewport={{ once: true }}
+              variants={skillsAnimation.itemVariants}
             >
               <Card className="p-4 sm:p-6 hover:shadow-lg transition-shadow h-full">
                 <motion.h3
@@ -63,7 +74,6 @@ export const SkillsSection = () => {
                           duration: 0.6,
                           delay: categoryIndex * 0.2 + skillIndex * 0.1
                         }}
-                        viewport={{ once: true }}
                         whileHover={{ x: 5 }}
                         className="p-2 sm:p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg"
                       >
@@ -84,7 +94,6 @@ export const SkillsSection = () => {
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: categoryIndex * 0.2 + skillIndex * 0.1 + 0.3 }}
-                            viewport={{ once: true }}
                           >
                             {skill.level}%
                           </motion.span>
@@ -100,7 +109,7 @@ export const SkillsSection = () => {
               </Card>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

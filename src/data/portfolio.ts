@@ -22,18 +22,18 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with React, Node.js, and PostgreSQL",
-    image: "/api/placeholder/400/200",
-    tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
+    description: "A full-stack e-commerce solution with Laravel backend and React frontend via Inertia.js",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop&crop=center",
+    tags: ["React", "Laravel", "PHP", "MySQL", "Inertia.js", "TailwindCSS", "ShadCN", "Apache"],
     github: "https://github.com",
     live: "https://demo.com"
   },
   {
     id: 2,
     title: "Task Management App",
-    description: "A collaborative task management tool with real-time updates",
-    image: "/api/placeholder/400/200",
-    tags: ["React", "Socket.io", "MongoDB", "Express"],
+    description: "A collaborative task management tool with real-time updates and team collaboration features",
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=200&fit=crop&crop=center",
+    tags: ["React", "Laravel", "PHP", "MySQL", "Inertia.js", "Material UI", "TailwindCSS", "Apache"],
     github: "https://github.com",
     live: "https://demo.com"
   },
@@ -41,19 +41,40 @@ export const projects: Project[] = [
     id: 3,
     title: "Weather Dashboard",
     description: "A responsive weather dashboard with location-based forecasts",
-    image: "/api/placeholder/400/200",
-    tags: ["React", "TypeScript", "API Integration", "Charts"],
+    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=200&fit=crop&crop=center",
+    tags: ["React", "TypeScript", "TailwindCSS", "ShadCN", "Zustand", "TanStack Query"],
     github: "https://github.com",
     live: "https://demo.com"
   },
   {
     id: 4,
-    title: "Social Media Analytics",
-    description: "Analytics dashboard for social media performance tracking",
-    image: "/api/placeholder/400/200",
-    tags: ["Next.js", "Python", "D3.js", "PostgreSQL"],
+    title: "Interactive World Clock",
+    description: "Configurable world clock with multiple time zones, formats, and customizable display options",
+    image: "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=400&h=200&fit=crop&crop=center",
+    tags: ["React", "TypeScript", "TailwindCSS", "ShadCN", "Zustand"],
     github: "https://github.com",
-    live: "https://demo.com"
+    live: "https://demo.com",
+    icon: "🕐"
+  },
+  {
+    id: 5,
+    title: "Web Pokedex",
+    description: "Interactive Pokemon encyclopedia with search, filtering, and detailed Pokemon information",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+    tags: ["React", "TypeScript", "TailwindCSS", "ShadCN", "Zustand", "TanStack Query"],
+    github: "https://github.com",
+    live: "https://demo.com",
+    icon: "⚡"
+  },
+  {
+    id: 6,
+    title: "Number Guessing Game",
+    description: "Interactive number guessing game with difficulty levels, hints, and score tracking",
+    image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=400&h=200&fit=crop&crop=center",
+    tags: ["React", "TypeScript", "TailwindCSS", "ShadCN"],
+    github: "https://github.com",
+    live: "https://demo.com",
+    icon: "🎯"
   }
 ];
 

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 import {
   coreValues,
@@ -12,14 +13,17 @@ import {
 import type { CoreValue, Statistic, QuickFact, StatusIndicator } from "../../types";
 
 export const AboutSection = () => {
+  const titleAnimation = useScrollAnimation({ threshold: 0.3 });
+  const journeyAnimation = useScrollAnimation({ threshold: 0.2 });
+  const valuesAnimation = useScrollAnimation({ threshold: 0.2 });
+  const factsAnimation = useScrollAnimation({ threshold: 0.2 });
+
   return (
     <section id="about" className="py-12 sm:py-16 lg:py-20 px-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          ref={titleAnimation.ref}
+          {...titleAnimation.getAnimationProps('slideDown')}
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">About Me</h2>
@@ -33,10 +37,8 @@ export const AboutSection = () => {
           <div className="lg:col-span-2 space-y-8">
             {/* Journey Section */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              ref={journeyAnimation.ref}
+              {...journeyAnimation.getAnimationProps('slideRight')}
             >
               <Card className="p-8 hover:shadow-lg transition-shadow">
                 <motion.h3

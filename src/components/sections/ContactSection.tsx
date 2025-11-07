@@ -4,17 +4,20 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import { personalInfo } from "../../data/portfolio";
 
 export const ContactSection = () => {
+  const titleAnimation = useScrollAnimation({ threshold: 0.3 });
+  const contactInfoAnimation = useScrollAnimation({ threshold: 0.2 });
+  const contactFormAnimation = useScrollAnimation({ threshold: 0.2 });
+
   return (
     <section id="contact" className="py-12 sm:py-16 lg:py-20 px-0 bg-slate-50 dark:bg-slate-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          ref={titleAnimation.ref}
+          {...titleAnimation.getAnimationProps('slideDown')}
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Get In Touch</h2>
@@ -26,10 +29,8 @@ export const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            ref={contactInfoAnimation.ref}
+            {...contactInfoAnimation.getAnimationProps('slideRight')}
             className="space-y-8"
           >
             <div>
@@ -44,7 +45,7 @@ export const ContactSection = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                viewport={{ once: true }}
+
               >
                 I'm always interested in hearing about new projects and opportunities.
                 Whether you're a company looking to hire, or just want to say hello,
@@ -58,7 +59,7 @@ export const ContactSection = () => {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
-                viewport={{ once: true }}
+
                 whileHover={{ x: 10, transition: { duration: 0.3 } }}
               >
                 <motion.div
@@ -82,7 +83,7 @@ export const ContactSection = () => {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}
-                viewport={{ once: true }}
+
                 whileHover={{ x: 10, transition: { duration: 0.3 } }}
               >
                 <motion.div
@@ -106,7 +107,7 @@ export const ContactSection = () => {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 }}
-                viewport={{ once: true }}
+
                 whileHover={{ x: 10, transition: { duration: 0.3 } }}
               >
                 <motion.div
@@ -129,10 +130,8 @@ export const ContactSection = () => {
 
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            ref={contactFormAnimation.ref}
+            {...contactFormAnimation.getAnimationProps('slideLeft')}
           >
             <Card className="p-8 hover:shadow-xl transition-shadow duration-300">
               <motion.form
@@ -140,14 +139,14 @@ export const ContactSection = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                viewport={{ once: true }}
+
               >
                 <div className="grid grid-cols-2 gap-4">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    viewport={{ once: true }}
+
                   >
                     <Input
                       placeholder="First Name"
@@ -158,7 +157,7 @@ export const ContactSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    viewport={{ once: true }}
+
                   >
                     <Input
                       placeholder="Last Name"
@@ -171,7 +170,7 @@ export const ContactSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
-                  viewport={{ once: true }}
+
                 >
                   <Input
                     type="email"
@@ -184,7 +183,7 @@ export const ContactSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
-                  viewport={{ once: true }}
+
                 >
                   <Input
                     placeholder="Subject"
@@ -196,7 +195,7 @@ export const ContactSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7 }}
-                  viewport={{ once: true }}
+
                 >
                   <Textarea
                     placeholder="Your message..."
@@ -209,7 +208,7 @@ export const ContactSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8 }}
-                  viewport={{ once: true }}
+
                 >
                   <motion.div
                     whileHover={{ scale: 1.05 }}

@@ -1,16 +1,18 @@
 import { motion } from "framer-motion";
 import { Card } from "../ui/card";
+import { useScrollAnimation, useStaggerAnimation } from "../../hooks/useScrollAnimation";
 import { hobbies } from "../../data/portfolio";
 
 export const HobbiesSection = () => {
+  const titleAnimation = useScrollAnimation({ threshold: 0.3 });
+  const hobbiesAnimation = useStaggerAnimation({ threshold: 0.2, staggerDelay: 0.1 });
+
   return (
     <section id="hobbies" className="py-12 sm:py-16 lg:py-20 px-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          ref={titleAnimation.ref}
+          {...titleAnimation.getAnimationProps('slideDown')}
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Beyond Code</h2>
@@ -19,14 +21,17 @@ export const HobbiesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <motion.div
+          ref={hobbiesAnimation.ref}
+          variants={hobbiesAnimation.containerVariants}
+          initial="initial"
+          animate="animate"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+        >
           {hobbies.map((hobby, index) => (
             <motion.div
               key={hobby.name}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              variants={hobbiesAnimation.itemVariants}
               whileHover={{ y: -10 }}
               className="h-full"
             >
@@ -60,7 +65,7 @@ export const HobbiesSection = () => {
               </Card>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Optional decorative element */}
         <motion.div
@@ -68,7 +73,6 @@ export const HobbiesSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          viewport={{ once: true }}
         >
           <div className="w-24 h-1 theme-gradient-primary rounded-full"></div>
         </motion.div>
